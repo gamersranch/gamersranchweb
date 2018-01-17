@@ -211,13 +211,14 @@ fieldset[disabled] .btn-xl.active {
 }
 @media (min-width: 768px) {
   .navbar-custom {
-    background-color: transparent;
-    padding: 25px 0;
+    background-color: #222;
+    padding: 10px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
     border: none;
   }
+
   .navbar-custom .navbar-brand {
     font-size: 2em;
     -webkit-transition: all 0.3s;
@@ -227,6 +228,11 @@ fieldset[disabled] .btn-xl.active {
   .navbar-custom .navbar-nav > .active > a {
     border-radius: 3px;
   }
+}
+@media (max-width: 1000px) {
+    header .btn {
+        display:none;
+    }
 }
 @media (min-width: 768px) {
   .navbar-custom.affix {
@@ -241,7 +247,7 @@ fieldset[disabled] .btn-xl.active {
     border-radius: 50%;
 }
 header {
-  background-image: url('../img/header-bg.jpg');
+  /*background-image: url('../img/header-bg.jpg');*/
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -758,4 +764,39 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #fed136;
+}
+
+
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition: opacity .5s; /* The 0.5s describes the duration to make the opacity from 0 to 1 */
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+/* CSS Hack to trigger GPU for smooth transition */
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+  .carousel-fade .carousel-inner > .item.next,
+  .carousel-fade .carousel-inner > .item.active.right {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .carousel-fade .carousel-inner > .item.prev,
+  .carousel-fade .carousel-inner > .item.active.left {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .carousel-fade .carousel-inner > .item.next.left,
+  .carousel-fade .carousel-inner > .item.prev.right,
+  .carousel-fade .carousel-inner > .item.active {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }

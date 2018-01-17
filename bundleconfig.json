@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "css/agency.min.css",
+    "inputFiles": [
+      "css/agency.css"
+    ]
+  },
+  {
+    "outputFileName": "index.min.html",
+    "inputFiles": [
+      "index.html"
+    ]
+  }
+]
